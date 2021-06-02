@@ -1,0 +1,65 @@
+.btn {
+  border-radius: 15px;
+  font-size: 0.8em;
+  transition: all .5s ease-in-out;
+
+}
+
+.btn:hover {
+  transform: scale(0.9)
+}
+
+.fixedHeight {
+  height: 60px !important
+}
+
+.fixedHeightTitle {
+  height: 60px !important
+}
+
+.bg {
+  background-image: linear-gradient(rgba(105, 111, 105, 0.116), rgba(42, 118, 44, 0.152));
+}
+
+.color1 {
+  background-color: #975D37
+}
+
+.color2 {
+  background-color: #e2742a
+}
+
+.color3 {
+  background-color: #38281e
+}
+
+.card {
+  border-radius: 10px;
+  transition: transform .2s;
+}
+
+.card:hover {
+  transform: scale(1.02)
+}
+
+.customized {
+  color: rgba(255, 255, 255, 0.733);
+  height: 10vh;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #aaa;
+}
+
+
+
+.active{
+  background-color: teal;
+  color:#fff !important;
+  font-weight: bold;
+  transform:scale(1.1)
+
+}
+.number:hover{
+  background-color: rgba(0, 128, 128, 0.172);
+}

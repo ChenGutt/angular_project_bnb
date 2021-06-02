@@ -1,0 +1,32 @@
+<div class="container-fluid bg" style="height:auto">
+  <div class="container">
+    <h1 class="py-5">Your Properties</h1>
+    <div class="row">
+
+      <div *ngIf="ownProperty_ar.length == 0" class="alert alert-warning" id="alert" dismiss-on-timeout="2000"
+        role="alert">
+        You have no properties listed. <a class="text-info" routerLink="/apartments/addProperty">Add a new property</a>
+      </div>
+
+
+      <div *ngFor="let item of ownProperty_ar" class="col-lg-4">
+
+        <div class="row mb-5">
+          <div class="position-relative text-center">
+            <img src="{{item.img}}" class="w-100 border-dark p-1" alt="{{item.apparttmentDesc}}"
+              onerror="this.src='assets/images/default_img.png'" height="200px">
+            <div class="position-absolute top-50 start-50 translate-middle">
+              <div class="title">{{item.appartmentDesc}}</div>
+              <p class="text-dark bold">Location: {{item.location}}</p>
+              <a routerLink="/apartments/ownproperties/update/{{item._id}}"><i
+                  class="fa fa-pencil-square-o me-2 btn btn-customized1 h3" aria-hidden="true"></i></a>
+              <a (click)="removeItem(item._id)"><i class="fa fa-trash-o h3 btn btn-customized2"
+                  aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

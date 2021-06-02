@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <div class="row px-5">
+    <div class="container col-lg-6">
+      <h1 class="mt-4 ps-4">Sign Up as a New Host</h1>
+      <hr class="w-75">
+      <div class="col-lg-6 text-center">
+        <form #f="ngForm" (ngSubmit)="onSub()">
+          <input placeholder="name" type="text" #inputName="ngModel" class="form-control mb-3" ngModel name="name"
+            minlength="2" required>
+          <div class="text-danger" *ngIf="inputName.invalid && inputName.touched">
+            Please Enter Name
+          </div>
+          <input placeholder="email" type="email" #inputEmail="ngModel" class="form-control mb-3" ngModel name="email"
+            email required>
+          <div class="text-danger" *ngIf="inputEmail.invalid && inputEmail.touched">
+            Please Enter a Valid Email
+          </div>
+
+          <input placeholder="password" type="password" #inputPass="ngModel" class="form-control" ngModel
+            name="password" minlength="2" required>
+          <div class="text-danger" *ngIf="inputPass.invalid && inputPass.touched">
+            Please Enter a Valid Password
+          </div>
+          <button class="btn btn-info mt-3 mb-4 w-50">Sign Up</button>
+          <p class="mt-3">Already a member? Login <a routerLink="/login" class="text-decoration-none text-info"> here</a></p>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-lg-6 d-flex flex-column justify-content-center">
+      <h1> Find out more about being a host and connect with experts</h1>
+      <p>We’ll share more about hosting and give you access to live webinars where experienced hosts can answer your
+        questions.</p>
+    </div>
+  </div>
+</div>

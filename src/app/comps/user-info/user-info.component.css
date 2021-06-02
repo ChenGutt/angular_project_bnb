@@ -1,0 +1,17 @@
+label{
+    display: block;
+    margin-top: 10px;
+}
+
+.bg {
+  background-image: linear-gradient(rgba(105, 111, 105, 0.426), rgba(42, 118, 44, 0.152));
+
+}
+
+a,input{
+    border-radius: 20px;
+}
+
+a{
+    width: 200px;
+}

@@ -1,0 +1,73 @@
+<div class="container-fluid bg">
+
+
+
+  <div class="container py-4">
+    <div class=" py-2 px-3 text-white col-lg-7 bg-info radius d-flex justify-content-around align-items-center">
+      <h1>List a new Property </h1>
+      <i class="fa fa-home display-3 ms-5" aria-hidden="true"></i>
+    </div>
+
+    <form #f="ngForm" (ngSubmit)="onSub()" class="col-lg-7 py-5">
+      <!-- <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div> -->
+      <div class="row">
+        <div class="col-lg-6">
+          <input name="hostName" ngModel #hostInput="ngModel" required type="text" class="form-control mt-2"
+            placeholder="*Host name">
+          <small *ngIf="hostInput.touched && hostInput.invalid" class="text-danger">* You must fill in this
+            field</small>
+        </div>
+        <div class="col-lg-6">
+          <input name="appartmentDesc" ngModel #descInput="ngModel" required type="text" class="form-control mt-2"
+            placeholder="*Description">
+          <small *ngIf="descInput.touched && descInput.invalid" class="text-danger">* You must fill in this
+            field</small>
+        </div>
+
+        <div class="col-lg-6 mt-3">
+          <input name="location" ngModel #locationInput="ngModel" required type="text" class="form-control mt-2"
+            placeholder="*Location">
+          <small *ngIf="locationInput.touched && locationInput.invalid" class="text-danger">* You must fill in this
+            field</small>
+        </div>
+        <div class="col-lg-6 mt-3">
+          <input name="perNight" ngModel #priceInput="ngModel" required minlength="1" type="number"
+            class="form-control mt-2" placeholder="*Cost Per Night">
+          <small *ngIf="priceInput.touched && priceInput.invalid" class="text-danger">*You must fill in this
+            field</small>
+        </div>
+
+        <div class="col-lg-4 mt-3">
+          <input name="extras" [(ngModel)]="extras[0]" class="form-control" placeholder="Extra #1 (optional)">
+        </div>
+        <div class="col-lg-4 mt-3">
+          <input type="text" name="extras" [(ngModel)]="extras[1]" class="form-control"
+            placeholder="Extra #2 (optional)">
+        </div>
+        <div class="col-lg-4 mt-3">
+          <input type="text" name="extras" [(ngModel)]="extras[2]" class="form-control"
+            placeholder="Extra #3 (optional)">
+        </div>
+
+
+
+        <div class="mt-3">
+          <input name="img" ngModel #imgInput="ngModel" minlength="5" type="text" class="form-control mt-2"
+            placeholder="Image">
+          <small *ngIf="imgInput.touched && imgInput.invalid" class="text-danger">*Please add an image</small>
+        </div>
+
+        <div class="mt-5">
+          <a routerLink="/userinfo" class="btn btn-dark me-2">Cancel</a>
+          <button class="btn btn-info text-white w-25 ms-5">Save</button>
+        </div>
+      </div>
+    </form>
+
+  </div>
+</div>

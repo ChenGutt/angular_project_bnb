@@ -1,0 +1,11 @@
+.btnSearch{
+    border-left:none !important;
+   
+}
+
+.fa:hover{
+   color:teal !important;
+   font-size: 1.1rem;
+   font-weight:bold;
+}
+

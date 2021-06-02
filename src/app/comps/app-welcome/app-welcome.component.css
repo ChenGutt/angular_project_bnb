@@ -1,0 +1,9 @@
+.bg {
+  background-image: linear-gradient(rgba(105, 111, 105, 0.426), rgba(42, 118, 44, 0.152));
+
+}
+
+.filter{
+    /* filter:brightness(100) */
+    filter: saturate(0%) brightness(70%) contrast(1000%);
+}

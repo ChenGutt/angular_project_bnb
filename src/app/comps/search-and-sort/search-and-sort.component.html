@@ -1,0 +1,22 @@
+<div class="container-fluid py-2 bg">
+  <div class="container">
+    <div class="d-lg-flex col-lg-9 align-items-center p-2 justify-content-center">
+      <div class="input-group">
+        <input [(ngModel)]="searchWord" (input)="getSearchQ($event)" class="form-control border-end-0 border"
+          type="search" value="search" placeholder="Search..." >
+        <span class="input-group-append">
+          <button class="btn btnSearch btn-outline-secondary bg-white border-start-0 border" type="button"
+            (click)="getSearchResults()">
+            <i class="fa fa-search text-secondary"></i>
+          </button>
+        </span>
+      </div>
+      <label class="col-form-label col-lg-2 ms-5">Sort By:</label>
+      <select [(ngModel)]="sortInput" (change)="getSearchResults()" class="form-select border">
+        <option value="perNight">Price</option>
+        <option value="createdAt">Most new</option>
+      </select>
+    </div>
+
+  </div>
+</div>

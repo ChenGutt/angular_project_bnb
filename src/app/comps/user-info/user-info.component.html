@@ -1,0 +1,19 @@
+<div class="container-fluid bg">
+
+  <div class="container py-5">
+    <div class="col-lg-6" [style]="{height: '60vh'}">
+
+      <h1>Host Information</h1>
+      <hr>
+      <label>Name: </label>
+      <input class="form-control" type="text" disabled [ngModel]="userInfo.name">
+      <label>Email: </label>
+      <input class="form-control" type="text" disabled [ngModel]="userInfo.email">
+      <label>Member since: </label>
+      <input class="form-control" type="text" disabled [ngModel]="userInfo.createdAt">
+      <a routerLink="/apartments/ownproperties" class="btn btn-secondary my-4">To your properties</a>
+    </div>
+    <br>
+  </div>
+
+</div>

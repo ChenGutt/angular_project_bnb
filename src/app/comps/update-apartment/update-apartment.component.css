@@ -1,0 +1,10 @@
+.bg {
+  background-image: linear-gradient(rgba(105, 111, 105, 0.426), rgba(42, 118, 44, 0.152));
+
+}
+
+a,
+button,
+input {
+  border-radius: 20px;
+}

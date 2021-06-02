@@ -1,0 +1,27 @@
+.container-fluid {
+  background-image: linear-gradient(rgba(105, 111, 105, 0.426), rgba(42, 118, 44, 0.152));
+}
+
+.fontAwesome {
+  font-family: 'Baumans', fontAwesome,
+    cursive;
+}
+
+input {
+  border-radius: 20px;
+}
+
+button {
+  border-radius: 20px;
+}
+
+.iconSize {
+  font-size: 8rem;
+}
+
+.customized {
+  background: rgba(164, 240, 195, 0.987);
+  color: rgb(5, 79, 50);
+  border: none;
+  border-radius: 10px;
+}

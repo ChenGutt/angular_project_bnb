@@ -1,0 +1,63 @@
+<div class="container-fluid bg" [style]="{height: 'auto'}">
+  <div class="container py-5">
+
+    <h1 class="py-5 text-center customized display-5 d-flex">Find your accommodation</h1>
+    <app-search-and-sort></app-search-and-sort>
+    <hr class="text-secondary mb-2">
+    <label>show per page:</label>
+    <select [(ngModel)]="perPage" class="mb-5" (change)="resultsPerPage(perPage)">
+      <option value="3">3</option>
+      <option value="5">5</option>
+    </select>
+
+    <div class="row">
+
+      <ngb-alert *ngIf="apartment_ar.length == 0" class="alert alert-warning alert-dismissible fade show" role="alert" (click)="onAlert()">
+        Sorry, your search gave no
+        results
+      </ngb-alert>
+
+      <div *ngFor="let item of apartment_ar" class="col-lg-4 mb-4 d-flex justify-content-center">
+
+        <div class="card bg-transparent shadow text-center" style="width: 21rem;border:none">
+          <img src="{{item.img}}" class="card-img-top border p-2" alt="{{item.apparttmentDesc}}"
+            onerror="this.src='assets/images/default_img.png'" height="200px">
+          <div class="card-body">
+            <h5 class="card-title fixedHeightTitle">{{item.appartmentDesc}}</h5>
+            <p class="text-secondary">Location: {{item.location}}</p>
+            <p class="text-secondary">Date created : {{item.createdAt}}</p>
+            <ul [ngClass]="{'invisible': item.extras.length == 0 }" class="list-unstyled fixedHeight">Includes:<br>
+              <li class="badge color1 me-2">{{item.extras[0]}}</li>
+              <li class="badge color2 me-2">{{item.extras[1]}}</li>
+              <li class="badge color3">{{item.extras[2]}}</li>
+            </ul>
+            <h5>{{item.perNight}}€ / night</h5>
+            <button class="btn btn-dark mt-3 w-100">Book now!</button>
+          </div>
+
+        </div>
+
+        <!-- <img src="{{item.img}}" alt="" class="w-25 float-left me-3 h-100 border p-2"
+        onerror="this.src='assets/images/default_img.png'">
+      <div class="p-2">
+        <h5>{{item.appartmentDesc}}</h5>
+        <p class="text-secondary">Location: {{item.location}}</p>
+        <ul class="list-unstyled">Includes:
+          <li class="badge bg-secondary me-2">{{item.extras[0]}}</li>
+          <li class="badge bg-danger me-2">{{item.extras[1]}}</li>
+          <li class="badge bg-success">{{item.extras[2]}}</li>
+        </ul>
+
+        <h5>{{item.perNight}}€ / night</h5>
+        <div>Host: {{item.hostName}}</div>
+        <button class="btn btn-info">Book now!</button>
+      </div> -->
+      </div>
+    </div>
+  </div>
+  <div class="text-center">
+       <button [ngClass]="{'active': i === currentPage}" class="btn number mb-5 text-secondary mx-2" (click)="searchWithQueries(i)" *ngFor="let item of number_ar ; let i=index">{{item}}</button>
+
+  </div>
+
+</div>

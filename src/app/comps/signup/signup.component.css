@@ -1,0 +1,7 @@
+button,input{
+    border-radius: 20px;
+}
+
+.container-fluid {
+  background-image: linear-gradient(rgba(105, 111, 105, 0.426), rgba(42, 118, 44, 0.152));
+}
