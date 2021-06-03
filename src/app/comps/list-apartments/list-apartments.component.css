@@ -5,6 +5,15 @@
 
 }
 
+.pageNum {
+  border-radius: 5px;
+}
+
+.pageNum:hover{
+  background-color: rgba(0, 128, 128, 0.172);
+  color:gray !important;
+}
+
 .btn:hover {
   transform: scale(0.9)
 }
@@ -54,12 +63,12 @@
 
 
 .active{
-  background-color: teal;
+  background-color: teal !important;
   color:#fff !important;
   font-weight: bold;
-  transform:scale(1.1)
+  transform:scale(1.2)
+}
+.active:hover{
+  color:white !important;
+}
 
-}
-.number:hover{
-  background-color: rgba(0, 128, 128, 0.172);
-}

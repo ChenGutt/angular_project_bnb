@@ -14,7 +14,7 @@ export class ListApartmentsComponent implements OnInit {
   pageNum:any;
   totalItems:any;
   number_ar:any[] = []
-  perPage:any;
+  perPage:number = 3;
   currentPage:any = 0;
   
   constructor(private apartmentsSer: ApartmentService, private route:ActivatedRoute) { }
@@ -28,7 +28,7 @@ export class ListApartmentsComponent implements OnInit {
     this.number_ar = this.apartmentsSer.number_ar;
     this.number_ar.splice(0, this.number_ar.length)
     console.log(this.number_ar)
-  }
+     }
 
   
   searchWithQueries(i:any){
@@ -52,6 +52,10 @@ export class ListApartmentsComponent implements OnInit {
   }
 
   resultsPerPage(perPage: any): void{
+    this.pageNum = 0;
+    this.currentPage = this.pageNum;
+    console.log(this.pageNum)
+    console.log(this.currentPage)
     console.log(this.perPage)
     this.number_ar.splice(0, this.number_ar.length)
     perPage = this.perPage;

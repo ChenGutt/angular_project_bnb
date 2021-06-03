@@ -56,7 +56,9 @@
     </div>
   </div>
   <div class="text-center">
-       <button [ngClass]="{'active': i === currentPage}" class="btn number mb-5 text-secondary mx-2" (click)="searchWithQueries(i)" *ngFor="let item of number_ar ; let i=index">{{item}}</button>
+    
+       <button [ngClass]="{'active': i === currentPage}" class="btn btn-secondary text-light  mb-5 text-secondary mx-1 pageNum" (click)="searchWithQueries(i)" *ngFor="let item of number_ar ; let i=index">{{item}}</button>
+       
 
   </div>
 

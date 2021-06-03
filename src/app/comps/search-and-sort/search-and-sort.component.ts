@@ -22,6 +22,7 @@ export class SearchAndSortComponent implements OnInit {
     this.searchWord = e.target.value;
     console.log(e.target.value)
     if (!this.searchWord) {
+      console.log(this.apartmentsSer.pageNum)
       this.getSearchResults()
     }
   }
