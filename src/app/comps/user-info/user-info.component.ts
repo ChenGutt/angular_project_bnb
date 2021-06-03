@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -10,9 +11,10 @@ import { UsersService } from 'src/app/services/users.service';
 export class UserInfoComponent implements OnInit {
   userInfo:any = {};
   theDate:any;
-  constructor(private userSer: UsersService, private router:Router) { }
+  constructor(private userSer: UsersService, private router:Router, private authSer:AuthService) { }
 
   ngOnInit(): void {
+    this.authSer.checkIfToken()
     this.userSer.getInfo()
     this.getUserInfo()
   }

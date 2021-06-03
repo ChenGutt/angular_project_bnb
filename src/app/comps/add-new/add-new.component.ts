@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApartmentService } from 'src/app/services/apartment.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-add-new',
@@ -11,9 +12,10 @@ export class AddNewComponent implements OnInit {
   @ViewChild("f") myForm: any;
   extras:any[] = [];
   // show:boolean= true;
-  constructor(private apartmentsSer: ApartmentService, private router:Router) { }
+  constructor(private apartmentsSer: ApartmentService, private router:Router, private authSer:AuthService) { }
 
   ngOnInit(): void {
+    this.authSer.checkIfToken()
   }
 
   onSub() {

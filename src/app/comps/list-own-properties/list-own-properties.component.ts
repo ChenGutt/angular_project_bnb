@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApartmentService } from 'src/app/services/apartment.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-list-own-properties',
@@ -10,10 +11,11 @@ import { ApartmentService } from 'src/app/services/apartment.service';
 export class ListOwnPropertiesComponent implements OnInit {
   ownProperty_ar: any[] = [];
   imageExists: boolean = true;
-  constructor(private apartmentsSer: ApartmentService, private router:Router) { }
+  constructor(private apartmentsSer: ApartmentService, private router:Router, private authSer:AuthService) { }
 
 
   ngOnInit(): void {
+    this.authSer.checkIfToken()
     let url = `${this.apartmentsSer.ApiUrl}/appartments/ownproperties`;
     this.apartmentsSer.yourProperties(url)
     this.apartmentsSer.getOwnProperties()

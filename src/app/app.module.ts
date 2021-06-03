@@ -63,7 +63,9 @@ import { CommonModule } from '@angular/common';
     NgbModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      positionClass: 'toast-bottom-right'
+      positionClass: 'toast-bottom-right',
+      timeOut: 1500,
+      progressBar:true
     }),
     MatToolbarModule,
     FlexLayoutModule,

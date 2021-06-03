@@ -14,6 +14,7 @@ export class UsersService {
   user:any = {};
   userName:any;
   failedLog:boolean = false;
+  loading:any;
   
   constructor(private apiSer: ApiService, private router: Router, private toastSer: ToastService) { }
 
@@ -39,11 +40,13 @@ export class UsersService {
       _bodyData.checked = true;
      localStorage.setItem("token", res.token);  
      this.user = res;
+      this.toastSer.showSuccess("You have successfully logged in", "Welcome back!");
       setTimeout(() => {
         this.router.navigate(['/userinfo']);
     }, 1000); 
     }, (rej:any)=>{
       this.failedLog = true;
+      this.toastSer.showError("Please try again", "Something went wrong");
     })
 
   }
