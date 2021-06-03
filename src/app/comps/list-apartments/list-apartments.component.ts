@@ -36,6 +36,7 @@ export class ListApartmentsComponent implements OnInit {
     this.currentPage = i;
     this.pageNum = i;
     this.perPage = this.apartmentsSer.perPage;
+    this.apartmentsSer.currentPage = this.currentPage;
     console.log(this.perPage)
     console.log(this.apartmentsSer.searchWord)
     console.log(this.apartmentsSer.sortInput)

@@ -11,9 +11,11 @@ export class SearchAndSortComponent implements OnInit {
   searchWord: any = "";
   sortInput: string = "perNight";
   url: any;
+  pageNum:any;
   constructor(private apartmentsSer: ApartmentService) { }
 
   ngOnInit(): void {
+    this.apartmentsSer.pageNum = this.pageNum;
     this.apartmentsSer.searchWord = this.searchWord;
     this.apartmentsSer.sortInput = this.sortInput;
   }
@@ -30,7 +32,7 @@ export class SearchAndSortComponent implements OnInit {
   getSearchResults() {
     console.log(this.searchWord)
     console.log(this.sortInput)
-    this.url = `${this.apartmentsSer.ApiUrl}/appartments?q=${this.searchWord}&sort=${this.sortInput}&perPage=${this.apartmentsSer.perPage}`
+    this.url = `${this.apartmentsSer.ApiUrl}/appartments?q=${this.searchWord}&sort=${this.sortInput}&perPage=${this.apartmentsSer.perPage}&${this.apartmentsSer.pageNum}`
       console.log(this.url)
    
    

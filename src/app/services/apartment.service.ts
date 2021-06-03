@@ -14,6 +14,7 @@ sortInput:any;
 total_items:any;
 number_ar:any = [];
 perPage:number = 3;
+currentPage:any;
 pageNum:any;
 ApiUrl:string = this.apiSer.ApiUrl;
 
