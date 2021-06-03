@@ -22,6 +22,16 @@ import { DeletePropertyComponent } from './comps/delete-property/delete-property
 import { FooterComponent } from './comps/footer/footer.component';
 import { SearchAndSortComponent } from './comps/search-and-sort/search-and-sort.component';
 import { AppWelcomeComponent } from './comps/app-welcome/app-welcome.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+import { MatMenuModule } from '@angular/material/menu';
+import { CommonModule } from '@angular/common';
+
 
 
 @NgModule({
@@ -50,7 +60,18 @@ import { AppWelcomeComponent } from './comps/app-welcome/app-welcome.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right'
+    }),
+    MatToolbarModule,
+    FlexLayoutModule,
+    MatIconModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatMenuModule,
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,85 +1,75 @@
-<div class="container-fluid bg-dark">
-  <div class="container">
-    <div class="row">
-      <nav class="text-end d-flex justify-content-between align-items-center">
+<mat-toolbar class="bg-dark text-white">
+  <mat-toolbar-row fxLayoutAlign="space-between center">
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <button mat-button routerLink="/" fxLayoutAlign="center center">
         <img src="../../../assets/images/logo2.png" alt="" style="width:150px; border-radius: 10px;">
+      </button>
+    </div>
+    <div fxLayoutAlign="center center">
 
-        <div> <a *ngIf="!isLoggedIn" routerLink="/signup" routerLinkActive="active">Sign Up</a>
-          <a *ngIf="!isLoggedIn" routerLink="/login" routerLinkActive="active" class="btn">Login</a>
-        </div>
+      <!--    BURGER     -->
 
+      <button fxHide.gt-xs mat-icon-button (click)="onToggleMobileMenu()">
+        <mat-icon> menu</mat-icon>
+      </button>
 
-        <div ngbDropdown class="ngbDropdown m-0" *ngIf="isLoggedIn">
-          <span class="text-white"> {{userName}}</span>
-          <button *ngIf="isLoggedIn" class="btn text-white" id="dropdownConfig" ngbDropdownToggle><i
-              class="fa fa-user-circle h4 mt-2" aria-hidden="true"></i></button>
-          <div ngbDropdownMenu aria-labelledby="dropdownConfig">
-            <button ngbDropdownItem routerLink="/userinfo" routerLinkActive="active">Host Info</button>
+       <!--     DESKTOP MENU NOT LOGGED      -->
 
-            <button ngbDropdownItem routerLink="apartments/addProperty" routerLinkActive="active">New Property</button>
-            <button ngbDropdownItem routerLink="apartments/ownproperties/" routerLinkActive="active">Your
-              Properties</button>
-          </div>
-
-          <a *ngIf="isLoggedIn" (click)="logout()" routerLinkActive="active" routerLink="/login"
-            class="btn btn-warning text-white">Logout</a>
-        </div>
-
-        <div ngbDropdown class="ngbDropdown2 mt-3" *ngIf="isLoggedIn && mobile">
+      <div fxHide.lt-sm fxLayout="row">
+        <button *ngIf="!isLoggedIn" mat-button routerLink="/signup" routerLinkActive="active">Sign Up</button>
+        <button *ngIf="!isLoggedIn" routerLink="/login" routerLinkActive="active" mat-button>Login</button>
+        <div *ngIf="isLoggedIn">
           <span class="text-white w-25"> {{userName}}</span>
-          <button *ngIf="isLoggedIn" class="btn text-white" id="dropdownConfig" ngbDropdownToggle><i
-              class="fa fa-bars h3" aria-hidden="true"></i>
-          </button>
-          <div ngbDropdownMenu aria-labelledby="dropdownConfig">
-            <button *ngIf="isLoggedIn" (click)="logout()" routerLinkActive="active" routerLink="/login"
-              class="btn text-danger">Logout</button>
-            <button ngbDropdownItem routerLink="/userinfo" routerLinkActive="active">Host Info</button>
 
+          <!--    DESKTOP MENU LOGGED IN + DROPDOWN MENU  DESKTOP -->
+
+          <button mat-button [matMenuTriggerFor]="beforeMenu"><i class="fa fa-user-circle-o fs-3"
+              aria-hidden="true"></i>
+            <mat-icon>arrow_drop_down</mat-icon>
+          </button>
+          <mat-menu #beforeMenu="matMenu" xPosition="before" class="deskMenu bg-dark">
+            <button ngbDropdownItem routerLink="/userinfo" routerLinkActive="active">Host Info</button>
             <button ngbDropdownItem routerLink="apartments/addProperty" routerLinkActive="active">New Property</button>
             <button ngbDropdownItem routerLink="apartments/ownproperties/" routerLinkActive="active">Your
               Properties</button>
-          </div>
-
-
+          </mat-menu>
         </div>
+        <button mat-button *ngIf="isLoggedIn" routerLinkActive="active" routerLink="/login" (click)="logout()"
+          class="badge badge-warning btnLogout text-dark">Logout</button>
+      </div>
 
+       <!--   MOBILE NAV NOT LOGGED   -->
 
+      <nav fxLayout="row" *ngIf="navCollapse !isLoggedIn" fxHide.gt-xs fxLayout="column" fxLayoutAlign="center center"
+        class="bg-dark">
+        <div class="d-flex flex-column menuMobileNotLogged bg-dark">
+          <button (click)="navCollapse=false" *ngIf="!isLoggedIn" routerLink="/login" routerLinkActive="active"
+            mat-button>Login</button>
+          <button (click)="navCollapse=false" *ngIf="!isLoggedIn" mat-button routerLink="/signup"
+            routerLinkActive="active">Sign Up</button>
+        </div>
 
       </nav>
+
+      <!--   MOBILE NAV LOGGED IN  -->
+
+      <nav fxLayout="row" *ngIf="navCollapse isLoggedIn" fxHide.gt-xs fxLayout="column" fxLayoutAlign="center center"
+        class="bg-dark">
+        <div *ngIf="isLoggedIn">
+          <!-- <button mat-menu-item class="border-0" disabled> {{userName}}</button> -->
+          <button routerLinkActive="active" (click)="logout()" class="bg-warning text-dark 
+          border-0 outline-0">Logout</button>
+          <button (click)="navCollapse=false" mat-menu-item routerLink="/userinfo" routerLinkActive="active">Host
+            Info</button>
+          <button (click)="navCollapse=false" mat-menu-item routerLink="apartments/addProperty"
+            routerLinkActive="active">Add Property</button>
+          <button (click)="navCollapse=false" mat-menu-item routerLink="apartments/ownproperties/"
+            routerLinkActive="active">Your
+            Properties</button>
+
+        </div>
+      </nav>
+     
     </div>
-
-  </div>
-</div>
-
-<!-- desktop: state1: login/sign up      state2: logout/ user dropdown(userinfo...) -->
-<!-- mobile: state1: burger => login/sign up      state2:  burger =>  logout/userinfo/addNew/yourProperties 
-
-<!-- <div class="bg-dark text-white shadow-s">
-  <div class="d-flex justify-content-center align-items-center">
-    <div class="col-lg-3"> -->
-<!-- 
-      <h3>Logo</h3>
-    </div>
-    <div (click)="toggleClass()"  class="burger pe-3">
-      <a><i class="fa fa-bars fs-2" aria-hidden="true"></i>
-      </a>
-    </div>
-   
-
-  </div>
- <nav class="col-lg-9 text-end p-0 overflow-hidden"[ngClass]="{'closeNavWithNavLinks': !classAdded}">
-
-      <ul class="navLinks list-unstyled" [ngClass]="{'mobileNavOpen': !classAdded}">
-
-        <li class="a-logged"><a *ngIf="isLoggedIn" routerLink="#">Login</a></li>
-        <li><a *ngIf="isLoggedIn" routerLink="#">Sign up</a></li>
-        <li><a *ngIf="isLoggedIn" routerLink="#">bla</a></li>
-        <li><a *ngIf="isLoggedIn" routerLink="#">blabla</a></li>
-        <!-- <li class="a-logged"><a *ngIf="!isLoggedIn" routerLink="#">Logout</a></li>
-        <li><a *ngIf="!isLoggedIn" routerLink="#"><i class="fa fa-user-circle h4 mt-2" aria-hidden="true"></i></a></li> -->
-<!-- 
-
-      </ul>
-
-    </nav>
-</div> -->
+  </mat-toolbar-row>
+</mat-toolbar>

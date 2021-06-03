@@ -15,14 +15,15 @@ export class NavbarComponent implements OnInit, DoCheck {
  showDrop: boolean = false;
  mobile:boolean = false;
  classAdded:boolean = false;
+ navCollapse: boolean = false;
 
   constructor(private userSer: UsersService, private router: Router, private apiSer:ApiService) { }
   ngOnInit(): void {
-   
+  
+    
   }
 
   ngDoCheck(): void {
-    window.onresize = () => this.mobile = window.innerWidth <= 991;
 
     if (localStorage["token"]) {
       this.isLoggedIn = true;
@@ -37,17 +38,15 @@ export class NavbarComponent implements OnInit, DoCheck {
   }
 
     logout():void{
+      console.log("logout")
       this.userSer.logOut()
+      this.navCollapse = false;
     }
 
-    toggle():void{
-      this.showDrop = !this.showDrop;
-      console.log(this.showDrop)
-    }
-
-  toggleClass():void {
-    this.classAdded = !this.classAdded;
+  onToggleMobileMenu(): void {
+    this.navCollapse = !this.navCollapse
   }
+
 
 }
 

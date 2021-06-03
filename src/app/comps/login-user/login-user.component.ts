@@ -1,5 +1,7 @@
 import { Component, DoCheck, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastService } from 'src/app/services/toast.service';
+
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -12,9 +14,10 @@ export class LoginUserComponent implements OnInit, DoCheck{
   justLogged:boolean = false;
   failedlog:boolean = false;
   loading:boolean = false;
-  constructor(private userSer: UsersService, private router: Router) { }
+  constructor(private userSer: UsersService, private router: Router, private toastSer: ToastService) { }
 
   ngOnInit(): void {
+  
   }
 
   ngDoCheck(): void {
@@ -36,6 +39,7 @@ export class LoginUserComponent implements OnInit, DoCheck{
      this.userSer.userLogin(this.myForm.form.value)
      this.loading = true;
     this.myForm.form.value.checked
+    // return this.toastSer.showSuccess("wdpkfsdofksd", "sdsadds");
      }
 
      }

@@ -1,8 +1,7 @@
-import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { ApiService } from './api.service';
+import { ToastService } from './toast.service';
 
 
 @Injectable({
@@ -15,7 +14,8 @@ export class UsersService {
   user:any = {};
   userName:any;
   failedLog:boolean = false;
-  constructor(private apiSer:ApiService, private router:Router) { }
+  
+  constructor(private apiSer: ApiService, private router: Router, private toastSer: ToastService) { }
 
   userSignup(_bodyData:any):void{
     //send name, email, password
@@ -75,5 +75,6 @@ export class UsersService {
 
   logOut():void{
     localStorage.removeItem("token")
+    this.router.navigate(['/login'])
   }
 }
