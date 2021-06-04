@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 
@@ -6,10 +6,10 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ApiService {
-  isLogged:any;
-  ApiUrl:string = "http://localhost:3001"
+  isLogged: any;
+  ApiUrl: string = "https://istaybnb.herokuapp.com/"
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   getHeader(_url: any): any {
     if (localStorage['token']) {
@@ -21,25 +21,25 @@ export class ApiService {
     }
   }
 
-  postReqWithHeader(_url: any, _bodyData:any): any {
+  postReqWithHeader(_url: any, _bodyData: any): any {
     if (localStorage['token']) {
       let xAuth = new HttpHeaders({
         'x-auth-token': localStorage['token'],
         'content-type': 'application/json'
       })
-      return this.http.post(_url, _bodyData,{ headers: xAuth })
+      return this.http.post(_url, _bodyData, { headers: xAuth })
     }
   }
 
-  getRequest(_url: any):any{
+  getRequest(_url: any): any {
     return this.http.get(_url);
   }
 
-  postRequest(_url:any, _bodyData:any):any{
+  postRequest(_url: any, _bodyData: any): any {
     return this.http.post(_url, _bodyData)
   }
 
-  putRequest(_url:any, _bodyData:any):any{
+  putRequest(_url: any, _bodyData: any): any {
     if (localStorage['token']) {
       let xAuth = new HttpHeaders({
         'x-auth-token': localStorage['token'],
@@ -47,11 +47,11 @@ export class ApiService {
       })
       return this.http.put(_url, _bodyData, { headers: xAuth })
     }
-    
+
   }
 
 
-  delRequest(_url: any):any {
+  delRequest(_url: any): any {
 
     if (localStorage['token']) {
       let xAuth = new HttpHeaders({
@@ -60,7 +60,7 @@ export class ApiService {
       })
       return this.http.delete(_url, { headers: xAuth })
     }
-    
+
   }
 
 }
