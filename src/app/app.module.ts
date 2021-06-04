@@ -62,7 +62,7 @@ import { CommonModule } from '@angular/common';
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
-      timeOut: 2000,
+      timeOut: 2300,
       progressBar:true
     }),
     MatToolbarModule,

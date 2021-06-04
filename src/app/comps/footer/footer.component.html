@@ -1,8 +1,152 @@
-<div class="container-fluid ">
+<!-- <div class="container-fluid ">
     <div class="row">
         <div class="col-lg-12 bg-dark text-center">
             <img src="../../../assets/images/logo2.png" alt="" style="width:100px">
             <p class="text-white"> &copy;  2021 design by <a class="text-decoration-none text-info linkedIn" target="_blank" href="https://www.linkedin.com/in/chen-gutt-8b5596209/">Chen Gutt</a> </p>
         </div>
     </div>
-</div>
+</div> -->
+
+<!-- Footer -->
+<footer class="bg-dark text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fa fa-facebook"
+          aria-hidden="true"></i></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fa fa-twitter"
+          aria-hidden="true"></i></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fa fa-google"
+          aria-hidden="true"></i></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fa fa-instagram"
+          aria-hidden="true"></i></a>
+
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Form -->
+    <section>
+      <form #f="ngForm" (ngSubmit)="onSub()">
+        <!--Grid row-->
+        <div class="row d-flex justify-content-center">
+          <!--Grid column-->
+          <div class="col-auto">
+            <p class="pt-2">
+              <strong>Sign up for our newsletter</strong>
+            </p>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-5 col-12">
+            <!-- Email input -->
+            <div class="mb-4">
+              <input type="email" email required #inputEmail="ngModel" ngModel class="form-control" name="email"
+                placeholder="email address" />
+              <div class="text-danger" *ngIf="inputEmail.invalid && inputEmail.touched">
+                Please Enter a Valid Email
+              </div>
+            </div>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-auto">
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-outline-light mb-4">
+              Subscribe
+            </button>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </form>
+    </section>
+    <!-- Section: Form -->
+
+    <!-- Section: Text -->
+    <section class="textAboutMobile mb-4">
+      <p>
+        iStay was established in the goal of bringing people around the world closer to each other while making all
+        destinations as accessible as possible.
+
+      </p>
+    </section>
+    <!-- Section: Text -->
+
+    <!-- Section: Links -->
+    <section class="logo">
+      <!--Grid row-->
+      <div class="row">
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <img src="../../../assets/images/logo2.png" alt="" style="width:200px">
+        </div>
+        <!--Grid column-->
+
+        
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0 usefulLinksMobile">
+          <h5 class="text-uppercase">Useful Links</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a target="_blank" href="https://www.tripadvisor.com/TravelersChoice-Destinations-cPopular-g1" class="text-white">Trip Advisor Top destinations 2021</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://www.cdc.gov/coronavirus/2019-ncov/travelers/map-and-travel-notices.html" class="text-white">COVID-19 Travel information</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Privacy</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Terms and Conditions</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Contact</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <i class="fa fa-home me-3 fs-5" aria-hidden="true"></i> Groningen, the Netherlands
+            </li>
+            <li>
+              <a href="#!" class="text-white"><i class="fa fa-envelope-o me-3" aria-hidden="true"></i>info@istay.com</a>
+            </li>
+            <li>
+               <a href="#!" class="text-white"><i class="fa fa-phone me-3" aria-hidden="true"></i> +31 555 0000</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white"><i class="fa fa-whatsapp me-3" aria-hidden="true"></i> +31 620 00000</a> 
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </section>
+    <!-- Section: Links -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2021 design by <a class="text-decoration-none text-info linkedIn" target="_blank"
+      href="https://www.linkedin.com/in/chen-gutt-8b5596209/">Chen Gutt</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->

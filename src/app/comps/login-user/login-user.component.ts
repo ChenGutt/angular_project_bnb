@@ -1,6 +1,5 @@
 import { Component, DoCheck, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { indexOf } from 'lodash';
 import { ToastService } from 'src/app/services/toast.service';
 
 import { UsersService } from 'src/app/services/users.service';

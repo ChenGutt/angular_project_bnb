@@ -2,3 +2,13 @@
     color:rgb(139, 216, 216);
     font-weight: bold;
 }
+
+@media screen and (max-width:992px){
+    .usefulLinksMobile{
+        display: none;
+    }
+    
+    .textAboutMobile{
+        display: none;
+    }
+}
