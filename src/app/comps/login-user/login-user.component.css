@@ -26,3 +26,10 @@ button {
   border-radius: 10px;
 }
 
+input.ng-touched.ng-invalid {
+  border: 1px solid red;
+}
+
+input.ng-touched.ng-valid {
+  border: 1px solid teal;
+}

@@ -26,7 +26,6 @@ export class UpdateApartmentComponent implements OnInit {
       if (this.myForm.form.status == "VALID") {
         let dataBody = this.myForm.form.value;
         this.apartmentsSer.updateProperty(url, dataBody);
-        this.router.navigate(['/apartments/ownproperties'])
       }
   }
 

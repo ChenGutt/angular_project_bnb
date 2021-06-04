@@ -18,7 +18,6 @@ import { UpdateApartmentComponent } from './comps/update-apartment/update-apartm
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { OwnPropertyUserComponent } from './comps/own-property-user/own-property-user.component';
 import { ListOwnPropertiesComponent } from './comps/list-own-properties/list-own-properties.component';
-import { DeletePropertyComponent } from './comps/delete-property/delete-property.component';
 import { FooterComponent } from './comps/footer/footer.component';
 import { SearchAndSortComponent } from './comps/search-and-sort/search-and-sort.component';
 import { AppWelcomeComponent } from './comps/app-welcome/app-welcome.component';
@@ -49,7 +48,6 @@ import { CommonModule } from '@angular/common';
     UpdateApartmentComponent,
     OwnPropertyUserComponent,
     ListOwnPropertiesComponent,
-    DeletePropertyComponent,
     FooterComponent,
     SearchAndSortComponent,
     AppWelcomeComponent
@@ -64,7 +62,7 @@ import { CommonModule } from '@angular/common';
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
-      timeOut: 1500,
+      timeOut: 2000,
       progressBar:true
     }),
     MatToolbarModule,

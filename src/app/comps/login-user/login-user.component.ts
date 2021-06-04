@@ -19,6 +19,7 @@ export class LoginUserComponent implements OnInit, DoCheck{
 
   ngOnInit(): void {
   this.userSer.loading = this.loading;
+
   }
 
   ngDoCheck(): void {
@@ -37,15 +38,13 @@ export class LoginUserComponent implements OnInit, DoCheck{
 
   onSub() {
     console.log(this.myForm.form.value);
-    if(this.myForm.form.status == "VALID"){
+    if (this.myForm.form.status == "VALID") {
       this.userSer.userLogin(this.myForm.form.value)
       this.loading = true;
-      this.myForm.form.value.checked
+     // this.myForm.form.value.checked;
+     this.userSer.myForm = this.myForm;
+
     }
-    else{
-      
-    }
-   
      }
 
      }

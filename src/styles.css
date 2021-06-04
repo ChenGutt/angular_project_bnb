@@ -12,9 +12,6 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
-
-
-
 /* position */
 .toast-center-center {
   top: 50%;
@@ -185,7 +182,8 @@ button.toast-close-button {
 }
 
 .toast-success {
-  background-color: #51A351;
+  background-color: #6cd3b8
+;
 }
 
 .toast-error {
@@ -197,7 +195,8 @@ button.toast-close-button {
 }
 
 .toast-warning {
-  background-color: #F89406;
+  background-color: #FFC108
+;
 }
 
 .toast-progress {

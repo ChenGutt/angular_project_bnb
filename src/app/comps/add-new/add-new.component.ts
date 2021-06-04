@@ -21,12 +21,10 @@ export class AddNewComponent implements OnInit {
   onSub() {
     if (this.myForm.form.status == "VALID") {
       let bodyForm = this.myForm.form.value;
-    bodyForm.extras = this.extras;
+      bodyForm.extras = this.extras;
       console.log(bodyForm)
       let url = `${this.apartmentsSer.ApiUrl}/appartments/addnew`
       this.apartmentsSer.addProperty(url,bodyForm);
-      alert('success')
-      this.router.navigate(['/apartments/ownproperties'])
-    }
+           }
   }
 }

@@ -1,4 +1,4 @@
-<div class="container-fluid" [style]="{height: '100vh'}">
+<div class="container-fluid" [style]="{height: '80vh'}">
 
   <div class="container d-flex justify-content-center" [style]="{height: '70vh'}">
     <div class="col-lg-6 p-2 text-center">
@@ -30,7 +30,7 @@
           <input type="password" placeholder='&#xf084;  |  password' #inputPass="ngModel"
             class="form-control fontAwesome" ngModel name="password" minlength="2" required>
           <div class="text-danger" *ngIf="inputPass.invalid && inputPass.touched">
-            Please Enter a Valid Password
+            Please Enter a Valid Password (at least 2 chars)
           </div>
         </div>
         <button class="btn btn-info mt-3 w-25" [disabled]="loading"> <span *ngIf="loading"

@@ -15,6 +15,7 @@ export class UsersService {
   userName:any;
   failedLog:boolean = false;
   loading:any;
+  myForm:any;
   
   constructor(private apiSer: ApiService, private router: Router, private toastSer: ToastService) { }
 
@@ -23,6 +24,7 @@ export class UsersService {
     let url = `${this.apiSer.ApiUrl}/users/signup`;
     this.apiSer.postRequest(url, _bodyData).subscribe((res: any) => {
       console.log(res);
+      this.toastSer.showSuccess("You have signed up successfully!", "Welcome to iStay!")
     }, (rej:any)=>{
       if(rej.error.code == 11000){
         alert("email already exist in the system")
@@ -47,6 +49,7 @@ export class UsersService {
     }, (rej:any)=>{
       this.failedLog = true;
       this.toastSer.showError("Please try again", "Something went wrong");
+      // this.myForm.reset() // resetting the form option
     })
 
   }
@@ -78,6 +81,7 @@ export class UsersService {
 
   logOut():void{
     localStorage.removeItem("token")
+    this.toastSer.showWarning("You have logged out", "Bye bye")
     this.router.navigate(['/login'])
   }
 }

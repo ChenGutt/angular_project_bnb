@@ -26,7 +26,6 @@ export class ListOwnPropertiesComponent implements OnInit {
     let url = `${this.apartmentsSer.ApiUrl}/appartments/${id}`
     if (confirm("Are you sure you want to delete?")) {
       this.apartmentsSer.deleteProperty(url)
-      location.reload()
       this.router.navigate(['apartments/ownproperties'])
     }
  
