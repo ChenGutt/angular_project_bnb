@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 })
 export class ApiService {
   isLogged: any;
-  ApiUrl: string = "https://istaybnb.herokuapp.com/"
+  ApiUrl: string = "https://istaybnb.herokuapp.com"
 
   constructor(private http: HttpClient) { }
 

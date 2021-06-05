@@ -8,30 +8,30 @@ import { ApartmentService } from 'src/app/services/apartment.service';
   styleUrls: ['./list-apartments.component.css']
 })
 export class ListApartmentsComponent implements OnInit {
-  apartment_ar:any[] = []
-  show:boolean = false;
-  url:any;
-  pageNum:any;
-  totalItems:any;
-  number_ar:any[] = []
-  perPage:number = 3;
-  currentPage:any = 0;
-  
-  constructor(private apartmentsSer: ApartmentService, private route:ActivatedRoute) { }
+  apartment_ar: any[] = []
+  show: boolean = false;
+  url: any;
+  pageNum: any;
+  totalItems: any;
+  number_ar: any[] = []
+  perPage: number = 3;
+  currentPage: any = 0;
+
+  constructor(private apartmentsSer: ApartmentService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.apartment_ar = this.apartmentsSer.getApartments();
-    this.url = `${this.apartmentsSer.ApiUrl}/appartments?pageNum=${this.pageNum}`
+    this.url = `${this.apartmentsSer.ApiUrl}/appartments`
     console.log(this.url)
     this.apartmentsSer.getApiApartments(this.url);
     console.log(this.apartmentsSer.getApartments())
     this.number_ar = this.apartmentsSer.number_ar;
     this.number_ar.splice(0, this.number_ar.length)
     console.log(this.number_ar)
-     }
+  }
 
-  
-  searchWithQueries(i:any){
+
+  searchWithQueries(i: any) {
     this.apartment_ar.splice(0, this.apartment_ar.length)
     this.currentPage = i;
     this.pageNum = i;
@@ -44,15 +44,15 @@ export class ListApartmentsComponent implements OnInit {
 
     this.apartmentsSer.pageNum = this.pageNum
     console.log(this.url)
-      
-    
+
+
     this.apartmentsSer.getApiApartments(this.url);
     console.log(this.url)
     this.number_ar.splice(0, this.number_ar.length)
-   
+
   }
 
-  resultsPerPage(perPage: any): void{
+  resultsPerPage(perPage: any): void {
     this.pageNum = 0;
     this.currentPage = this.pageNum;
     console.log(this.pageNum)
@@ -66,8 +66,8 @@ export class ListApartmentsComponent implements OnInit {
     console.log(this.url)
 
   }
-  
-  onAlert():void{
+
+  onAlert(): void {
     location.reload()
   }
 }
