@@ -39,8 +39,9 @@
       </div>
 
        <!--   MOBILE NAV NOT LOGGED   -->
+     
 
-      <nav fxLayout="row" *ngIf="navCollapse !isLoggedIn" fxHide.gt-xs fxLayout="column" fxLayoutAlign="center center"
+<nav *ngIf="navCollapse !isLoggedIn" fxHide.gt-xs fxLayout="column" fxLayoutAlign="center"
         class="bg-dark">
         <div class="d-flex flex-column menuMobileNotLogged bg-dark">
           <button (click)="navCollapse=false" *ngIf="!isLoggedIn" routerLink="/login" routerLinkActive="active"
