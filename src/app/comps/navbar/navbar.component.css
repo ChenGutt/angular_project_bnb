@@ -13,7 +13,7 @@
 }
 
 
-button.active{
+button.active {
   color: rgb(87, 182, 182);
   font-weight: bold;
 }
@@ -45,16 +45,15 @@ nav::before {
 
 nav {
   position: absolute;
-  margin-top: 235px; 
+  margin-top: 235px;
   /* margin-top: 280px;  */
   width: 100vw;
   right: 0px;
   z-index: 150;
   transform: translateY(0%);
- 
+
 }
 
-.menuMobileNotLogged{
-  margin-top:-100px;
+.menuMobileNotLogged {
+  margin-top: -100px;
 }
-
