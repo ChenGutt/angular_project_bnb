@@ -33,6 +33,9 @@ ApiUrl:string = this.apiSer.ApiUrl
     console.log(this.sortInput)
     console.log(this.searchWord)
     this.apiSer.getRequest(url).subscribe((res:any)=>{
+      if(res.search_total == 0){
+        this.toast.showInfo("Your search gave no results","Oh oh")
+      }
       this.apartment_ar.splice(0, this.apartment_ar.length)
       for (let key in res.results) {
         this.apartment_ar.push(res.results[key])
