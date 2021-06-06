@@ -1,6 +1,6 @@
 .container-fluid {
   background-image: url(..\..\..\assets\images\cover_photo.jpg);
-   background-position: 0px -130px;
+  background-position: 0px -130px;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -10,8 +10,8 @@
   padding: 0;
 }
 
-@media screen and (max-width:768px){
-  .container-fluid{
+@media screen and (max-width:768px) {
+  .container-fluid {
     background-attachment: local;
     background-position: right;
   }
@@ -23,8 +23,7 @@ h1 {
 }
 
 p {
-  /* color: rgba(255, 255, 255, 0.604); */
-  color: #000;
+  color: rgba(255, 255, 255, 0.604);
 }
 
 .btn {
@@ -32,5 +31,3 @@ p {
   font-size: 0.9em;
   color: rgba(255, 255, 255, 0.741);
 }
-
-
