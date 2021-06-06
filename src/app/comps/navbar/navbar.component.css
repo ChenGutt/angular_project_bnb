@@ -47,7 +47,7 @@ nav {
   position: absolute;
   /* margin-top: 235px;  */
   /* margin-top: 280px;  */
-  top: 710px;
+  top: 78vh;
   width: 100vw;
   right: 0px;
   z-index: 150;
@@ -57,5 +57,5 @@ nav {
 
 .menuMobileNotLogged {
   position: absolute;
-  top: -95px;
+  top: 0vh;
 }
