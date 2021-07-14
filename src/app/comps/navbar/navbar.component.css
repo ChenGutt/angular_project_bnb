@@ -59,3 +59,7 @@ nav {
   position: absolute;
   top: 0vh;
 }
+
+.mat-toolbar-multiple-rows {
+  justify-content:center;
+}
