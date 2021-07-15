@@ -11,7 +11,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  getHeader(_url: any): any {
+  getHeader(_url: string): any {
     if (localStorage['token']) {
       let xAuth = new HttpHeaders({
         'x-auth-token': localStorage['token'],
@@ -21,7 +21,7 @@ export class ApiService {
     }
   }
 
-  postReqWithHeader(_url: any, _bodyData: any): any {
+  postReqWithHeader(_url: string, _bodyData: any): any {
     if (localStorage['token']) {
       let xAuth = new HttpHeaders({
         'x-auth-token': localStorage['token'],
@@ -31,15 +31,15 @@ export class ApiService {
     }
   }
 
-  getRequest(_url: any): any {
+  getRequest(_url: string): any {
     return this.http.get(_url);
   }
 
-  postRequest(_url: any, _bodyData: any): any {
+  postRequest(_url: string, _bodyData: any): any {
     return this.http.post(_url, _bodyData)
   }
 
-  putRequest(_url: any, _bodyData: any): any {
+  putRequest(_url: string, _bodyData: any): any {
     if (localStorage['token']) {
       let xAuth = new HttpHeaders({
         'x-auth-token': localStorage['token'],
@@ -51,7 +51,7 @@ export class ApiService {
   }
 
 
-  delRequest(_url: any): any {
+  delRequest(_url: string): any {
 
     if (localStorage['token']) {
       let xAuth = new HttpHeaders({

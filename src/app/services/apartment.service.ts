@@ -53,6 +53,7 @@ ApiUrl:string = this.apiSer.ApiUrl
 
   // adding new property if has token
 
+  
   addProperty(url:any, bodyForm:any){
     this.apiSer.postReqWithHeader(url, bodyForm).subscribe((res:any)=>{
       console.log(res);
