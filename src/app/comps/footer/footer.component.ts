@@ -7,10 +7,14 @@ import { ToastService } from 'src/app/services/toast.service';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
+
   @ViewChild("f") myForm: any;
-  constructor(private toastSer:ToastService) { }
+  constructor(private toastSer: ToastService) { }
+  currentYear: any;
 
   ngOnInit(): void {
+    //show current year
+    this.currentYear = new Date().getFullYear();
   }
 
   onSub() {

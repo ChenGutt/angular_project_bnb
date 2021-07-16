@@ -5,7 +5,6 @@ import {HttpClientModule} from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UsersComponent } from './comps/users/users.component';
 import { SignupComponent } from './comps/signup/signup.component';
 import { LoginUserComponent } from './comps/login-user/login-user.component';
 import { NavbarComponent } from './comps/navbar/navbar.component';
@@ -36,7 +35,6 @@ import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
-    UsersComponent,
     SignupComponent,
     LoginUserComponent,
     NavbarComponent,

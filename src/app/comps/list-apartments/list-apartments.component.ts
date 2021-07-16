@@ -9,7 +9,7 @@ import { ApartmentService } from 'src/app/services/apartment.service';
 })
 export class ListApartmentsComponent implements OnInit {
   apartment_ar: any[] = []
-  show: boolean = false;
+  // show: boolean = false;
   url: any;
   pageNum: any;
   totalItems: any;
@@ -20,54 +20,50 @@ export class ListApartmentsComponent implements OnInit {
   constructor(private apartmentsSer: ApartmentService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.apartment_ar = this.apartmentsSer.getApartments();
+
+    //get list of apartments into aparmtent_ar
+
     this.url = `${this.apartmentsSer.ApiUrl}/appartments`
-    console.log(this.url)
     this.apartmentsSer.getApiApartments(this.url);
-    console.log(this.apartmentsSer.getApartments())
+    console.log(this.apartmentsSer.getApartments());
+    this.apartment_ar = this.apartmentsSer.getApartments();
+
+    //number_ar for Pagination
+
+    this.number_ar.splice(0, this.number_ar.length);
     this.number_ar = this.apartmentsSer.number_ar;
-    this.number_ar.splice(0, this.number_ar.length)
-    console.log(this.number_ar)
   }
 
-
-  searchWithQueries(i: any) {
+  changePage(i: any) {
     this.apartment_ar.splice(0, this.apartment_ar.length)
+
+    //currentPage = allow to show active page number
+
     this.currentPage = i;
     this.pageNum = i;
     this.perPage = this.apartmentsSer.perPage;
     this.apartmentsSer.currentPage = this.currentPage;
-    console.log(this.perPage)
-    console.log(this.apartmentsSer.searchWord)
-    console.log(this.apartmentsSer.sortInput)
+
+    //a new API request with all relevant queries
+
     this.url = `${this.apartmentsSer.ApiUrl}/appartments?q=${this.apartmentsSer.searchWord}&pageNum=${this.pageNum}&perPage=${this.apartmentsSer.perPage}&sort=${this.apartmentsSer.sortInput}`
 
-    this.apartmentsSer.pageNum = this.pageNum
-    console.log(this.url)
-
+    this.apartmentsSer.pageNum = this.pageNum;
 
     this.apartmentsSer.getApiApartments(this.url);
-    console.log(this.url)
-    this.number_ar.splice(0, this.number_ar.length)
+    // this.number_ar.splice(0, this.number_ar.length)
 
   }
+
+  //adjust num of results to be shown per page according to user's choice
 
   resultsPerPage(perPage: any): void {
     this.pageNum = 0;
     this.currentPage = this.pageNum;
-    console.log(this.pageNum)
-    console.log(this.currentPage)
-    console.log(this.perPage)
     this.number_ar.splice(0, this.number_ar.length)
     perPage = this.perPage;
     this.apartmentsSer.perPage = perPage;
     this.url = `${this.apartmentsSer.ApiUrl}/appartments?q=${this.apartmentsSer.searchWord}&pageNum=${this.pageNum}&perPage=${this.apartmentsSer.perPage}&sort=${this.apartmentsSer.sortInput}&${this.pageNum}`
     this.apartmentsSer.getApiApartments(this.url);
-    console.log(this.url)
-
-  }
-
-  onAlert(): void {
-    location.reload()
   }
 }

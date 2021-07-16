@@ -11,15 +11,18 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class LoginUserComponent implements OnInit, DoCheck{
   @ViewChild("f") myForm: any;
-  justLogged:boolean = false;
-  failedlog:boolean = false;
-  loading:boolean = false;
+  justLogged = false;
+  failedlog = false;
+  loading = false;
+  submitClicked = false;
   constructor(private userSer: UsersService, private router: Router, private toastSer: ToastService) { }
 
   ngOnInit(): void {
   this.userSer.loading = this.loading;
 
   }
+
+  //checking if the member has logged in by the existance of token in localStorage and changing boolean properties accordingly. 
 
   ngDoCheck(): void {
     if (localStorage["token"]) {
@@ -37,10 +40,12 @@ export class LoginUserComponent implements OnInit, DoCheck{
 
   onSub() {
     console.log(this.myForm.form.value);
-    if (this.myForm.form.status == "VALID") {
-      this.userSer.userLogin(this.myForm.form.value)
+    this.submitClicked = true;
+    if (this.myForm.form.status == "INVALID") {
+      this.toastSer.showError("Please try again", "Something went wrong");
+    }
+     else{ this.userSer.userLogin(this.myForm.form.value)
       this.loading = true;
-     // this.myForm.form.value.checked;
      this.userSer.myForm = this.myForm;
 
     }

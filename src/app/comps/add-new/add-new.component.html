@@ -54,18 +54,18 @@
             placeholder="Extra #3 (optional)">
         </div>
 
-
-
         <div class="mt-3">
           <input name="img" ngModel #imgInput="ngModel" minlength="5" type="text" class="form-control mt-2"
             placeholder="Image">
           <small *ngIf="imgInput.touched && imgInput.invalid" class="text-danger">*Please add an image</small>
         </div>
-
+        <small class="mt-4 text-secondary">* must be filled in</small>
         <div class="mt-5">
+
           <a routerLink="/userinfo" class="btn btn-dark me-2">Cancel</a>
           <button class="btn btn-info text-white w-25 ms-5">Save</button>
         </div>
+
       </div>
     </form>
 

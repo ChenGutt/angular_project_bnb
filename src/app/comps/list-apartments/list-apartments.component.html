@@ -12,11 +12,6 @@
 
     <div class="row">
 
-      <!-- <ngb-alert *ngIf="apartment_ar.length == 0" class="alert alert-warning alert-dismissible fade show" role="alert" (click)="onAlert()">
-        Sorry, your search gave no
-        results
-      </ngb-alert> -->
-
       <div *ngFor="let item of apartment_ar" class="col-lg-4 mb-4 d-flex justify-content-center">
 
         <div class="card bg-transparent shadow text-center" style="width: 21rem;border:none">
@@ -41,7 +36,7 @@
   <div class="text-center">
 
     <button [ngClass]="{'active': i === currentPage}"
-      class="btn btn-secondary text-light  mb-5 text-secondary mx-1 pageNum" (click)="searchWithQueries(i)"
+      class="btn btn-secondary text-light  mb-5 text-secondary mx-1 pageNum" (click)="changePage(i)"
       *ngFor="let item of number_ar ; let i=index">{{item}}</button>
 
 

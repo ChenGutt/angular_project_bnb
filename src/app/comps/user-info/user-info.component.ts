@@ -9,9 +9,9 @@ import { UsersService } from 'src/app/services/users.service';
   styleUrls: ['./user-info.component.css']
 })
 export class UserInfoComponent implements OnInit {
-  userInfo:any = {};
-  theDate:any;
-  constructor(private userSer: UsersService, private router:Router, private authSer:AuthService) { }
+  userInfo: any = {};
+  // theDate: any;
+  constructor(private userSer: UsersService, private router: Router, private authSer: AuthService) { }
 
   ngOnInit(): void {
     this.authSer.checkIfToken()
@@ -19,9 +19,9 @@ export class UserInfoComponent implements OnInit {
     this.getUserInfo()
   }
 
-   getUserInfo(){
-    this.userInfo =  this.userSer.userInfo;
-     console.log(this.userInfo)
+  getUserInfo() {
+    this.userInfo = this.userSer.userInfo;
+    console.log(this.userInfo)
   }
 
 }

@@ -1,27 +1,18 @@
-<div class="container-fluid" [style]="{height: '80vh'}">
+<div class="container-fluid">
 
-  <div class="container d-flex justify-content-center" [style]="{height: '70vh'}">
+  <div class="container d-flex justify-content-center">
     <div class="col-lg-6 p-2 text-center">
       <i class="fa fa-sign-in mt-3 text-info iconSize" aria-hidden="true"></i>
       <h3 class="mt-4">We are excited to see you again!</h3>
       <hr class="mx-auto">
 
-      <!-- <ngb-alert *ngIf="justLogged;" class="alert customized alert-dismissible fade show" role="alert"
-        routerLink="/userinfo">
-        You've successfully logged in. <a routerLink="/userinfo"></a>
-      </ngb-alert>
-
-            <ngb-alert *ngIf="failedlog" class="alert alert-danger alert-dismissible fade show" role="alert"
-        (click)="myForm.reset()">
-        Username of password incorrect. Try again.
-      </ngb-alert> -->
-
       <form #f="ngForm" (ngSubmit)="onSub()">
         <div class="mb-4">
-          <input type="email" #inputEmail="ngModel" class="form-control fontAwesome" ngModel name="email" email
-            required placeholder='&#xf0e0;  |  email'>
+          <input type="email" #inputEmail="ngModel" class="form-control fontAwesome" ngModel name="email" email required
+            placeholder='&#xf0e0;  |  email'>
 
-          <div class="text-danger" *ngIf="inputEmail.invalid && inputEmail.touched">
+          <div class="text-danger"
+            *ngIf="(inputEmail.invalid && inputEmail.touched) || (inputEmail.invalid && submitClicked == true)">
             Please Enter a Valid Email
           </div>
         </div>
@@ -29,19 +20,17 @@
         <div>
           <input type="password" placeholder='&#xf084;  |  password' #inputPass="ngModel"
             class="form-control fontAwesome" ngModel name="password" minlength="2" required>
-          <div class="text-danger" *ngIf="inputPass.invalid && inputPass.touched">
+          <div class="text-danger"
+            *ngIf="(inputPass.invalid && inputPass.touched) || (inputPass.invalid && submitClicked == true)">
             Please Enter a Valid Password (at least 2 chars)
           </div>
         </div>
         <button class="btn btn-info mt-3 w-25" [disabled]="loading"> <span *ngIf="loading"
             class="spinner-border spinner-border-sm mr-1"></span>Login</button>
       </form>
-      <p class="mt-3">Not a member yet? Sign up <a routerLink="/signup" class="text-decoration-none text-info"> here</a>
+      <p class="my-3">Not a member yet? Sign up <a routerLink="/signup" class="text-decoration-none text-info"> here</a>
       </p>
     </div>
 
-    <!-- <div class="d-flex justify-content-center">
-      <img src="\assets\images\loginPage.png" alt="" class="w-100 h-100" [style]="{filter: 'opacity(30%)'}">
-    </div> -->
   </div>
 </div>

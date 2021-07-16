@@ -18,7 +18,6 @@ export class ListOwnPropertiesComponent implements OnInit {
     this.authSer.checkIfToken()
     let url = `${this.apartmentsSer.ApiUrl}/appartments/ownproperties`;
     this.apartmentsSer.yourProperties(url)
-    this.apartmentsSer.getOwnProperties()
     this.ownProperty_ar = this.apartmentsSer.getOwnProperties()
     console.log(this.ownProperty_ar)
   }

@@ -6,11 +6,25 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ApiService {
-  isLogged: any;
+  
+  //main URL
   ApiUrl: string = "https://istaybnb.herokuapp.com"
 
   constructor(private http: HttpClient) { }
 
+  //simple get request, no header needed, no validation. 
+  getRequest(_url: string): any {
+    return this.http.get(_url);
+  }
+
+  
+  //simple post request - no header needed, no validation. 
+  postRequest(_url: string, _bodyData: any): any {
+    return this.http.post(_url, _bodyData)
+  }
+
+
+  //get request with header - authorized users
   getHeader(_url: string): any {
     if (localStorage['token']) {
       let xAuth = new HttpHeaders({
@@ -21,6 +35,7 @@ export class ApiService {
     }
   }
 
+  //post request with header  - authorized users
   postReqWithHeader(_url: string, _bodyData: any): any {
     if (localStorage['token']) {
       let xAuth = new HttpHeaders({
@@ -31,14 +46,7 @@ export class ApiService {
     }
   }
 
-  getRequest(_url: string): any {
-    return this.http.get(_url);
-  }
-
-  postRequest(_url: string, _bodyData: any): any {
-    return this.http.post(_url, _bodyData)
-  }
-
+  //put request with header - authorized users
   putRequest(_url: string, _bodyData: any): any {
     if (localStorage['token']) {
       let xAuth = new HttpHeaders({
@@ -50,7 +58,7 @@ export class ApiService {
 
   }
 
-
+//delete request with header - authorized users 
   delRequest(_url: string): any {
 
     if (localStorage['token']) {
