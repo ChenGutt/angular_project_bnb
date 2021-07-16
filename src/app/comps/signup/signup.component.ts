@@ -13,22 +13,22 @@ export class SignupComponent implements OnInit {
   isSignedUp = false;
   submitClicked = false;
 
-  constructor(private userSer: UsersService, private router:Router, private toastSer:ToastService) { }
+  constructor(private userSer: UsersService, private router: Router, private toastSer: ToastService) { }
 
   ngOnInit(): void {
   }
-  onSub():void{
+  onSub(): void {
     console.log(this.myForm.form.value);
     this.submitClicked = true;
     if (this.myForm.form.status == "INVALID") {
       this.toastSer.showError("Please try again", "Something went wrong");
     }
-  else{
+    else {
       this.userSer.userSignup(this.myForm.form.value)
       // alert("You have signed up!")
       this.isSignedUp = true;
       this.router.navigate(['/login'])
     }
-   
+
   }
 }
