@@ -68,10 +68,11 @@ export class UsersService {
   getInfo() {
     let url = `${this.apiSer.ApiUrl}/users/userinfo`;
     this.apiSer.getHeader(url).subscribe((res: any) => {
+      console.log(res)
       for (let key in res) {
         this.userInfo[key] = res[key];
-        //showing the date in a different format
-        this.userInfo.createdAt = new Date().toDateString();
+        // showing the date in a different format
+        this.userInfo.created = new Date(this.userInfo.createdAt).toDateString()
 
       }
       //showing "hello user" on the navbar as soon as user is successfully logged in
