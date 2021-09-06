@@ -23,7 +23,6 @@ export class ApiService {
     return this.http.post(_url, _bodyData)
   }
 
-
   //get request with header - authorized users
   getHeader(_url: string): any {
     if (localStorage['token']) {

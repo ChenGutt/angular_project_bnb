@@ -13,7 +13,7 @@
         <mat-icon> menu</mat-icon>
       </button>
 
-       <!--     DESKTOP MENU NOT LOGGED      -->
+      <!--     DESKTOP MENU NOT LOGGED      -->
 
       <div fxHide.lt-sm fxLayout="row">
         <button *ngIf="!isLoggedIn" mat-button routerLink="/signup" routerLinkActive="active">Sign Up</button>
@@ -38,11 +38,10 @@
           class="badge badge-warning btnLogout text-dark">Logout</button>
       </div>
 
-       <!--   MOBILE NAV NOT LOGGED   -->
-     
+      <!--   MOBILE NAV NOT LOGGED   -->
 
-<nav *ngIf="navCollapse !isLoggedIn" fxHide.gt-xs fxLayout="column" fxLayoutAlign="center"
-        class="bg-dark">
+
+      <nav *ngIf="navCollapse !isLoggedIn" fxHide.gt-xs fxLayout="column" fxLayoutAlign="center" class="bg-dark">
         <div class="d-flex flex-column menuMobileNotLogged bg-dark">
           <button (click)="navCollapse=false" *ngIf="!isLoggedIn" routerLink="/login" routerLinkActive="active"
             mat-button>Login</button>
@@ -70,7 +69,7 @@
 
         </div>
       </nav>
-     
+
     </div>
   </mat-toolbar-row>
 </mat-toolbar>

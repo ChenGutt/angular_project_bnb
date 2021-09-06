@@ -10,7 +10,11 @@
       <option value="6">6</option>
     </select>
 
-    <div class="row">
+    <div *ngIf="!apartment_ar" class="text-center" [style]="{height: 'auto'}">
+      <p>Loading properties, please wait...</p>
+      <div class="loader mx-auto"></div>
+    </div>
+    <div class="row" *ngIf="apartment_ar">
 
       <div *ngFor="let item of apartment_ar" class="col-lg-4 mb-4 d-flex justify-content-center">
 
