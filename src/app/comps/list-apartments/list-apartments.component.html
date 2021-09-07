@@ -11,11 +11,11 @@
     </select>
 
     <!-- loader -->
-    <div *ngIf="!apartment_ar" class="text-center" [style]="{height: 'auto'}">
+    <div *ngIf="!apartment_ar.length" class="text-center" [style]="{height: 'auto'}">
       <p>Loading properties, please wait...</p>
       <div class="loader mx-auto"></div>
     </div>
-    <div class="row" *ngIf="apartment_ar">
+    <div class="row" *ngIf="apartment_ar.length">
 
       <div *ngFor="let item of apartment_ar" class="col-lg-4 mb-4 d-flex justify-content-center">
 
