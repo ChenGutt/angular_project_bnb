@@ -9,7 +9,7 @@ import { UsersService } from 'src/app/services/users.service';
   templateUrl: './login-user.component.html',
   styleUrls: ['./login-user.component.css']
 })
-export class LoginUserComponent implements OnInit, DoCheck{
+export class LoginUserComponent implements OnInit, DoCheck {
   @ViewChild("f") myForm: any;
   justLogged = false;
   failedlog = false;
@@ -18,7 +18,7 @@ export class LoginUserComponent implements OnInit, DoCheck{
   constructor(private userSer: UsersService, private router: Router, private toastSer: ToastService) { }
 
   ngOnInit(): void {
-  this.userSer.loading = this.loading;
+    this.userSer.loading = this.loading;
 
   }
 
@@ -28,31 +28,29 @@ export class LoginUserComponent implements OnInit, DoCheck{
     if (localStorage["token"]) {
       this.justLogged = true;
       this.loading = true;
-      console.log(this.justLogged)
-
     } else {
       this.justLogged = false;
-     this.failedlog = this.userSer.failedLog;
+      this.failedlog = this.userSer.failedLog;
       this.loading = false;
-      console.log(this.justLogged)
     }
   }
 
   onSub() {
-    console.log(this.myForm.form.value);
     this.submitClicked = true;
+    this.loading = true;
     if (this.myForm.form.status == "INVALID") {
       this.toastSer.showError("Please try again", "Something went wrong");
     }
-     else{ this.userSer.userLogin(this.myForm.form.value)
+    else {
+      this.userSer.userLogin(this.myForm.form.value)
       this.loading = true;
-     this.userSer.myForm = this.myForm;
+      this.userSer.myForm = this.myForm;
 
     }
-     }
+  }
 
-     }
-     
-  
-   
+}
+
+
+
 

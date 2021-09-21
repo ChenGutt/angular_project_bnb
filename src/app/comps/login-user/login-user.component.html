@@ -19,10 +19,10 @@
 
         <div>
           <input type="password" placeholder='&#xf084;  |  password' #inputPass="ngModel"
-            class="form-control fontAwesome" ngModel name="password" minlength="2" required>
+            class="form-control fontAwesome" ngModel name="password" minlength="3" required>
           <div class="text-danger"
             *ngIf="(inputPass.invalid && inputPass.touched) || (inputPass.invalid && submitClicked == true)">
-            Please Enter a Valid Password (at least 2 chars)
+            Please Enter a Valid Password (at least 3 chars)
           </div>
         </div>
         <button class="btn btn-info mt-3 w-25" [disabled]="loading"> <span *ngIf="loading"
